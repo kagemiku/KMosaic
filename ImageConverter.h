@@ -19,8 +19,6 @@ private:
 	} RGB;
 
 private:
-	ImageConverter(void);
-	ImageConverter(const ImageConverter& rhs);
 
 	static void resizeImage(const cv::Mat& source, cv::Mat& destination, int width, int height);
 	static RGB calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeight, int row, int col);
@@ -28,7 +26,10 @@ private:
 	static void dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols);
 
 public:
-	~ImageConverter(void);
+	ImageConverter() = delete;
+    ImageConverter(const ImageConverter& rhs) = delete;
+	~ImageConverter();
+    auto operator=(const ImageConverter& rhs) -> ImageConverter* = delete;
 
 	static void convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string);
 };
