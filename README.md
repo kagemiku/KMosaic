@@ -10,19 +10,19 @@ You can use this very easily.
 1. Include ImageConverter.h in your code
 
 2. Prepare source cv::Mat and destination cv::Mat, and some information.
-For example, if you want to convert an image which name is **image.png**...  
-```cpp
-std::string srcFilePath("image.png");
-cv::Mat src     = cv::imread(srcFilePath);
-cv::Mat dest    = src.clone();
-```
-
-And, if you want to convert it to 100-px square and 100-blocks mosaicing image...
+For example, if you want to convert it to 100-px square and 100-blocks mosaicing image...
 ```cpp
 const int width     = 100;
 const int heigh     = 100;
 const int blockRows = 10;
 const int blockCols = 10;
+``` 
+
+And, if you want to convert an image which name is **image.png**...  
+```cpp
+std::string srcFilePath("image.png");
+cv::Mat src     = cv::imread(srcFilePath);
+cv::Mat dest    = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
 ``` 
 
 3. Call ImageConverter::convertImage method(this method is a **static** method).
