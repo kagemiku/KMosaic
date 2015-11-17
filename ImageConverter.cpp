@@ -4,18 +4,18 @@
 #include <opencv2/imgproc/imgproc.hpp>
 
 
-ImageConverter::~ImageConverter(void)
+ImageConverter::~ImageConverter()
 {
 }
 
 
-void ImageConverter::resizeImage(const cv::Mat& source, cv::Mat& destination, int width, int height)
+auto ImageConverter::resizeImage(const cv::Mat& source, cv::Mat& destination, int width, int height) -> void
 {
 	cv::resize(source, destination, destination.size(), 0, 0, cv::INTER_LINEAR);
 }
 
 
-ImageConverter::RGB ImageConverter::calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeight, int row, int col)
+auto ImageConverter::calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeight, int row, int col) -> ImageConverter::RGB
 {
 	int r = 0, g = 0, b = 0;
 	for ( int i = row*blockHeight; i < (row + 1)*blockHeight; i++ ) {
@@ -36,7 +36,7 @@ ImageConverter::RGB ImageConverter::calcMeanColor(const cv::Mat& source, int blo
 }
 
  
-void ImageConverter::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight, int row, int col, const RGB& color)
+auto ImageConverter::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight, int row, int col, const RGB& color) -> void
 {
 	for ( int i = row*blockHeight; i < (row + 1)*blockHeight; i++ ) {
 		for ( int j = col*blockWidth; j < (col + 1)*blockWidth; j++ ) {
@@ -49,7 +49,7 @@ void ImageConverter::drawMeanColor(cv::Mat& destination, int blockWidth, int blo
 }
 
 
-void ImageConverter::dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols)
+auto ImageConverter::dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols) -> void
 {
 	const int blockWidth	= destination.size().width/blockCols;
 	const int blockHeight	= destination.size().height/blockRows;
@@ -62,7 +62,7 @@ void ImageConverter::dropTone(const cv::Mat& source, cv::Mat& destination, int b
 }
 
 
-void ImageConverter::convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string)
+auto ImageConverter::convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void
 {
 	if ( width % blockCols != 0 || height % blockRows != 0 ) {
 		throw std::string("invalid params");

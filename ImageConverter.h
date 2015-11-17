@@ -20,10 +20,10 @@ private:
 
 private:
 
-	static void resizeImage(const cv::Mat& source, cv::Mat& destination, int width, int height);
-	static RGB calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeight, int row, int col);
-	static void drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight, int row, int col, const RGB& color);
-	static void dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols);
+	static auto resizeImage(const cv::Mat& source, cv::Mat& destination, int width, int height) -> void;
+	static auto calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeight, int row, int col) -> RGB;
+	static auto drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight, int row, int col, const RGB& color) -> void;
+	static auto dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols) -> void;
 
 public:
 	ImageConverter() = delete;
@@ -31,6 +31,6 @@ public:
 	~ImageConverter();
     auto operator=(const ImageConverter& rhs) -> ImageConverter* = delete;
 
-	static void convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string);
+	static auto convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void;
 };
 
