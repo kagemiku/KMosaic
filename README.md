@@ -30,5 +30,8 @@ cv::Mat dest    = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
 ImageConverter::convertImage(src, dest, width, height, blockRows, blockCols);
 ```
 
+# Example
+Please look at the source file **main.cpp** in examples.
+
 # License
 MIT License
