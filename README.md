@@ -1,5 +1,5 @@
 # KMosaic
-KMosaic is a simple making mosaic library using OpenCV2.
+KMosaic is a simple making mosaic library using OpenCV2.  
 You can use this very easily.
 
 # Require
@@ -9,7 +9,7 @@ You can use this very easily.
 # Usage
 1. Include ImageConverter.h in your code
 
-2. Prepare source cv::Mat and destination cv::Mat, and some information.
+2. Prepare source cv::Mat and destination cv::Mat, and some information.  
 For example, if you want to convert it to 100-px square and 100-blocks mosaicing image...
 ```cpp
 const int width     = 100;
