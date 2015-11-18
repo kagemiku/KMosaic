@@ -4,7 +4,7 @@
 #include <opencv2/core/core.hpp>
 
 
-class ImageConverter {
+class KMosaic {
 private:
 	enum {
 		COLOR_CHANNEL = 3,
@@ -26,10 +26,10 @@ private:
 	static auto dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols) -> void;
 
 public:
-	ImageConverter() = delete;
-    ImageConverter(const ImageConverter& rhs) = delete;
-	~ImageConverter();
-    auto operator=(const ImageConverter& rhs) -> ImageConverter* = delete;
+	KMosaic() = delete;
+    KMosaic(const KMosaic& rhs) = delete;
+	~KMosaic();
+    auto operator=(const KMosaic& rhs) -> KMosaic* = delete;
 
 	static auto convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void;
 };

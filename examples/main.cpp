@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../ImageConverter.h"
+#include "../KMosaic.h"
 #include <opencv2/highgui/highgui.hpp>
 using namespace std;
 
@@ -20,7 +20,7 @@ auto main() -> int
 
     cv::Mat dest = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
     try { 
-        ImageConverter::convertImage(src, dest, width, height, blockRows, blockCols);
+        KMosaic::convertImage(src, dest, width, height, blockRows, blockCols);
     } catch ( const string& msg ) {
         cerr << msg << endl;
         exit(1);
