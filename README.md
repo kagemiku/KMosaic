@@ -30,6 +30,9 @@ cv::Mat dest    = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
 KMosaic::convertImage(src, dest, width, height, blockRows, blockCols);
 ```
 
+# Caution
+Please don't forget link KMosaic.cpp when you compile your codes.
+
 # Example
 Please look at the source file **main.cpp** in examples.
 
