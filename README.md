@@ -7,7 +7,7 @@ You can use this very easily.
 * OpenCV2
 
 # Usage
-1. Include ImageConverter.h in your code
+1. Include KMosaic.h in your code
 
 2. Prepare source cv::Mat and destination cv::Mat, and some information.  
 For example, if you want to convert it to 100-px square and 100-blocks mosaicing image...
@@ -25,9 +25,9 @@ cv::Mat src     = cv::imread(srcFilePath);
 cv::Mat dest    = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
 ``` 
 
-3. Call ImageConverter::convertImage method(this method is a **static** method).
+3. Call KMosaic::convertImage method(this method is a **static** method).
 ```cpp 
-ImageConverter::convertImage(src, dest, width, height, blockRows, blockCols);
+KMosaic::convertImage(src, dest, width, height, blockRows, blockCols);
 ```
 
 # Example
