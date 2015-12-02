@@ -16,7 +16,7 @@ auto main() -> int
     if ( src.empty() ) {
         cerr << srcFilePath << " can't be read." << endl;
         exit(1);
-    }	
+    }    
 
     cv::Mat dest = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
     try { 
@@ -27,6 +27,6 @@ auto main() -> int
     }
 
     // write some processes...
-	
+    
     return 0;
 }
