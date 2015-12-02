@@ -34,7 +34,7 @@ KMosaic::convertImage(src, dest, width, height, blockRows, blockCols);
 Please don't forget link KMosaic.cpp when you compile your codes.
 
 # Example
-Please look at the source file **main.cpp** in examples.
+Please look at the source file **Main.cpp** in examples.
 
 # License
 MIT License
