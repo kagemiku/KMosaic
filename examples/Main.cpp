@@ -18,9 +18,9 @@ auto main() -> int
         exit(1);
     }
 
-    cv::Mat dest = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
+    cv::Mat dest;
     try {
-        KMosaic::makeMosaicImage(src, dest, width, height, blockRows, blockCols);
+        dest = KMosaic::makeMosaicImage(src, width, height, blockRows, blockCols);
     } catch ( const string& msg ) {
         cerr << msg << endl;
         exit(1);

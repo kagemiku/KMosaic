@@ -62,13 +62,17 @@ auto KMosaic::dropTone(const cv::Mat& source, cv::Mat& destination, int blockRow
 }
 
 
-auto KMosaic::makeMosaicImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void
+auto KMosaic::makeMosaicImage(const cv::Mat& source, int width, int height, int blockRows, int blockCols) throw (std::string) -> cv::Mat
 {
     if ( width % blockCols != 0 || height % blockRows != 0 ) {
         throw std::string("invalid params");
     }
 
-    auto tmp = destination.clone();
+    auto tmp = cv::Mat(cv::Size(width, height), CV_8UC3);
     resizeImage(source, tmp, width, height);
+
+    auto destination = tmp.clone();
     dropTone(tmp, destination, blockRows, blockCols);
+
+    return destination;
 }
