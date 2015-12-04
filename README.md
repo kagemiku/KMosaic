@@ -22,12 +22,11 @@ And, if you want to convert an image which name is **image.png**...
 ```cpp
 std::string srcFilePath("image.png");
 cv::Mat src     = cv::imread(srcFilePath);
-cv::Mat dest    = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
 ``` 
 
-3. Call KMosaic::convertImage method(this method is a **static** method).
+3. Call KMosaic::makeMosaicImage method(this method is a **static** method).
 ```cpp 
-KMosaic::convertImage(src, dest, width, height, blockRows, blockCols);
+cv::Mat dest = KMosaic::makeMosaicImage(src, dest, width, height, blockRows, blockCols);
 ```
 
 # Caution
