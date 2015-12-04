@@ -20,7 +20,7 @@ auto main() -> int
 
     cv::Mat dest = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
     try {
-        KMosaic::convertImage(src, dest, width, height, blockRows, blockCols);
+        KMosaic::makeMosaicImage(src, dest, width, height, blockRows, blockCols);
     } catch ( const string& msg ) {
         cerr << msg << endl;
         exit(1);

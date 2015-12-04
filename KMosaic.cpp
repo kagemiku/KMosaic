@@ -62,7 +62,7 @@ auto KMosaic::dropTone(const cv::Mat& source, cv::Mat& destination, int blockRow
 }
 
 
-auto KMosaic::convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void
+auto KMosaic::makeMosaicImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void
 {
     if ( width % blockCols != 0 || height % blockRows != 0 ) {
         throw std::string("invalid params");

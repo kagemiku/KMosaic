@@ -31,6 +31,6 @@ public:
     ~KMosaic();
     auto operator=(const KMosaic& rhs) -> KMosaic* = delete;
 
-    static auto convertImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void;
+    static auto makeMosaicImage(const cv::Mat& source, cv::Mat& destination, int width, int height, int blockRows, int blockCols) throw (std::string) -> void;
 };
 

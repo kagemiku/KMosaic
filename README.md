@@ -25,9 +25,9 @@ cv::Mat src     = cv::imread(srcFilePath);
 cv::Mat dest    = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
 ``` 
 
-3. Call KMosaic::convertImage method(this method is a **static** method).
+3. Call KMosaic::makeMosaicImage method(this method is a **static** method).
 ```cpp 
-KMosaic::convertImage(src, dest, width, height, blockRows, blockCols);
+KMosaic::makeMosaicImage(src, dest, width, height, blockRows, blockCols);
 ```
 
 # Caution
