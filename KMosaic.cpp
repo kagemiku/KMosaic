@@ -41,8 +41,8 @@ auto KMosaic::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeigh
     for ( auto i = row*blockHeight; i < (row + 1)*blockHeight; i++ ) {
         for ( auto j = col*blockWidth; j < (col + 1)*blockWidth; j++ ) {
             auto baseIdx = destination.step*i + COLOR_CHANNEL*j;
-            destination.data[baseIdx + RED_IDX]        = color.r;
-            destination.data[baseIdx + GREEN_IDX]    = color.g;
+            destination.data[baseIdx + RED_IDX]     = color.r;
+            destination.data[baseIdx + GREEN_IDX]   = color.g;
             destination.data[baseIdx + BLUE_IDX]    = color.b;
         }
     } 
@@ -51,8 +51,8 @@ auto KMosaic::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeigh
 
 auto KMosaic::dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols) -> void
 {
-    const auto blockWidth    = destination.size().width/blockCols;
-    const auto blockHeight    = destination.size().height/blockRows;
+    const auto blockWidth   = destination.size().width/blockCols;
+    const auto blockHeight  = destination.size().height/blockRows;
     for ( auto r = 0; r < blockRows; r++ ) {
         for ( auto c = 0; c < blockCols; c++ ) {
             const auto color = calcMeanColor(source, blockWidth, blockHeight, r, c);

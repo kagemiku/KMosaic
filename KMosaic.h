@@ -19,7 +19,6 @@ private:
     } RGB;
 
 private:
-
     static auto resizeImage(const cv::Mat& source, cv::Mat& destination, int width, int height) -> void;
     static auto calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeight, int row, int col) -> RGB;
     static auto drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight, int row, int col, const RGB& color) -> void;
