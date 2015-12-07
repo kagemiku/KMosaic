@@ -26,7 +26,7 @@ cv::Mat src     = cv::imread(srcFilePath);
 
 3. Call KMosaic::makeMosaicImage method(this method is a **static** method).
 ```cpp 
-cv::Mat dest = KMosaic::makeMosaicImage(src, dest, width, height, blockRows, blockCols);
+cv::Mat dest = KMosaic::makeMosaicImage(src, width, height, blockRows, blockCols);
 ```
 
 # Caution
