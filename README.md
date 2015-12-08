@@ -7,9 +7,9 @@ You can use this very easily.
 * OpenCV2
 
 # Usage
-1. Include KMosaic.h in your code
+#### 1. Include KMosaic.h in your code
 
-2. Prepare source cv::Mat and destination cv::Mat, and some information.  
+#### 2. Prepare source cv::Mat and destination cv::Mat, and some information.  
 For example, if you want to convert it to 100-px square and 100-blocks mosaicing image...
 ```cpp
 const int width     = 100;
@@ -24,7 +24,7 @@ std::string srcFilePath("image.png");
 cv::Mat src     = cv::imread(srcFilePath);
 ``` 
 
-3. Call kg::KMosaic::makeMosaicImage method(this method is a **static** method).
+#### 3. Call kg::KMosaic::makeMosaicImage method(this method is a **static** method).
 ```cpp 
 cv::Mat dest = kg::KMosaic::makeMosaicImage(src, width, height, blockRows, blockCols);
 ```
@@ -34,6 +34,9 @@ Please don't forget link KMosaic.cpp when you compile your codes.
 
 # Example
 Please look at the source file **Main.cpp** in examples.
+
+# Author
+KAGE
 
 # License
 MIT License
