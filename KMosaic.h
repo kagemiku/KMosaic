@@ -4,6 +4,9 @@
 #include <opencv2/core/core.hpp>
 
 
+namespace kg {
+
+
 class KMosaic {
 private:
     enum {
@@ -33,3 +36,5 @@ public:
     static auto makeMosaicImage(const cv::Mat& source, int width, int height, int blockRows, int blockCols) throw (std::string) -> cv::Mat;
 };
 
+
+}

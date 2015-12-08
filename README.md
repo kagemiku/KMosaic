@@ -24,9 +24,9 @@ std::string srcFilePath("image.png");
 cv::Mat src     = cv::imread(srcFilePath);
 ``` 
 
-3. Call KMosaic::makeMosaicImage method(this method is a **static** method).
+3. Call kg::KMosaic::makeMosaicImage method(this method is a **static** method).
 ```cpp 
-cv::Mat dest = KMosaic::makeMosaicImage(src, width, height, blockRows, blockCols);
+cv::Mat dest = kg::KMosaic::makeMosaicImage(src, width, height, blockRows, blockCols);
 ```
 
 # Caution

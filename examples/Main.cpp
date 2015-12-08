@@ -4,6 +4,7 @@
 #include <opencv2/highgui/highgui.hpp>
 using namespace std;
 
+
 auto main() -> int
 {
     const int width     = 100;
@@ -20,7 +21,7 @@ auto main() -> int
 
     cv::Mat dest;
     try {
-        dest = KMosaic::makeMosaicImage(src, width, height, blockRows, blockCols);
+        dest = kg::KMosaic::makeMosaicImage(src, width, height, blockRows, blockCols);
     } catch ( const string& msg ) {
         cerr << msg << endl;
         exit(1);

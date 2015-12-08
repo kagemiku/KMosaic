@@ -4,6 +4,9 @@
 #include <opencv2/imgproc/imgproc.hpp>
 
 
+namespace kg {
+
+
 KMosaic::~KMosaic()
 {
 }
@@ -75,4 +78,7 @@ auto KMosaic::makeMosaicImage(const cv::Mat& source, int width, int height, int 
     dropTone(tmp, destination, blockRows, blockCols);
 
     return destination;
+}
+
+
 }
