@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../KMosaic.h"
+#include "../sources/kmosaic.h"
 #include <opencv2/highgui/highgui.hpp>
 using namespace std;
 

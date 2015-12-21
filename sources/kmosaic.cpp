@@ -1,4 +1,4 @@
-#include "KMosaic.h"
+#include "kmosaic.h"
 #include <iostream>
 #include <string>
 #include <opencv2/imgproc/imgproc.hpp>
