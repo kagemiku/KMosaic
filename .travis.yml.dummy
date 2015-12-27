@@ -1,0 +1,17 @@
+language: cpp
+compiler:
+    - clang++
+before_install:
+    - sudo apt-get update
+before_script:
+    - pwd
+    - git clone https://github.com/Itseez/opencv.git
+    - cd opencv
+    - git checkout 2.4
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make -j8
+    - sudo make -j8 install
+    - cd ../../
+script: "sh ./.travis_build.sh"
