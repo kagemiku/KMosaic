@@ -27,7 +27,10 @@ auto main() -> int
         exit(1);
     }
 
-    // write some processes...
+    const string windowName("Result");
+    cv::namedWindow(windowName, cv::WINDOW_AUTOSIZE);
+    cv::imshow(windowName, dest);
+    cv::waitKey(0);
 
     return 0;
 }
