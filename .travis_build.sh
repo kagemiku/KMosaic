@@ -4,13 +4,14 @@ echo "Done compiling gtest-all.cc"
 ar -rv tests/libgtest.a tests/gtest-all.o
 echo "Done archiving gtest-all.o"
 echo "Compiling sources..."
-clang++ -std=c++1y -pthread -g -Wall -Wextra -isystem opencv/build/include -c -o tests/kmosaic.o sources/kmosaic.cpp
+clang++ -std=c++1y -pthread -g -Wall -Wextra  -c -o tests/kmosaic.o sources/kmosaic.cpp
+echo "Done compiling kmosaic.cpp"
 echo "Compiling unit tests..."
 clang++ -std=c++1y -pthread -g -Wall -Wextra -isystem tests/googletest/googletest/include -c -o tests/main.o tests/main.cpp
 echo "Done compiling main.cpp"
-clang++ -std=c++1y -pthread -g -Wall -Wextra -isystem tests/googletest/googletest/include -isystem opencv/build/include -c -o tests/kmosaic_test.o tests/kmosaic_test.cpp
-echo "Done compiling node_test.cpp"
-clang++ -std=c++1y -g -Wall -Wextra -o tests/gtest tests/kmosaic.o tests/main.o tests/kmosaic_test.o -pthread -Ltests/ -Lopencv/build/lib -lgtest -lopencv_highgui -lopencv_core -lopencv_imgproc
+clang++ -std=c++1y -pthread -g -Wall -Wextra -isystem tests/googletest/googletest/include  -c -o tests/kmosaic_test.o tests/kmosaic_test.cpp
+echo "Done compiling kmosaic_test.cpp"
+clang++ -std=c++1y -g -Wall -Wextra -o tests/gtest tests/kmosaic.o tests/main.o tests/kmosaic_test.o -pthread -Ltests/ -lgtest -lopencv_highgui -lopencv_core -lopencv_imgproc
 echo "Running unit tests..."
 tests/gtest -v
 result=$?

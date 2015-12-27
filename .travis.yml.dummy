@@ -13,8 +13,5 @@ before_script:
     - cmake ..
     - make -j8
     - sudo make -j8 install
-    - ls -al
-    - ls -al include
-    - ls -al lib
     - cd ../../
 script: "sh ./.travis_build.sh"
