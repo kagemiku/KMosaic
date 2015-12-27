@@ -38,7 +38,7 @@ auto KMosaic::calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeig
     return RGB(r, g, b);
 }
 
- 
+
 auto KMosaic::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight, int row, int col, const RGB& color) -> void
 {
     for ( auto i = row*blockHeight; i < (row + 1)*blockHeight; i++ ) {
@@ -48,7 +48,7 @@ auto KMosaic::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeigh
             destination.data[baseIdx + GREEN_IDX]   = color.g;
             destination.data[baseIdx + BLUE_IDX]    = color.b;
         }
-    } 
+    }
 }
 
 
