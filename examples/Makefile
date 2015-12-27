@@ -1,6 +1,7 @@
 CXX = clang++
 CXXFLAGS = -std=c++1y -g -Wall
 VPATH = ../sources
+.SUFFIXES: .cpp .o
 
 program = kmosaic
 objs = kmosaic.o main.o
@@ -10,15 +11,17 @@ $(program): CXXFLAGS += -L/usr/local/lib
 $(program): $(objs)
 	$(CXX) $(CXXFLAGS) $(libs) -o $@ $^
 
-kmosaic.o: CXXFLAGS += -I/usr/local/include
-kmosaic.o: kmosaic.cpp kmosaic.h
+.cpp.o:
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+kmosaic.o: CXXFLAGS += -I/usr/local/include
+kmosaic.o: kmosaic.h
 
 main.o: CXXFLAGS += -I/usr/local/include
-main.o: main.cpp kmosaic.h
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+main.o: kmosaic.h
 
-run:
+.PHONY: run
+run: $(program)
 	./$(program)
 
 .PHONY: clean
