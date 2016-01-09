@@ -3,14 +3,18 @@ compiler:
     - clang++
 before_install:
     - sudo apt-get update
+install:
+    - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install g++-5
 before_script:
     - pwd
     - git clone https://github.com/Itseez/opencv.git
     - cd opencv
-    - git checkout 2.4
+    - git checkout 2.4.12
     - mkdir build
     - cd build
-    - cmake ..
+    - cmake -D CMAKE_BUILD_TYPE=RELEASE ..
     - make -j8
     - sudo make -j8 install
     - cd ../../
