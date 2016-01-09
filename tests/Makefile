@@ -7,9 +7,8 @@ program = gtest
 objs = kmosaic.o main.o kmosaic_test.o
 libs = -lopencv_highgui -lopencv_core -lopencv_imgproc -lgtest
 
-$(program): CXXFLAGS += -L/usr/local/lib -L./
 $(program): $(objs)
-	$(CXX) $(CXXFLAGS) $(libs) -o $@ $^
+	$(CXX) $(CXXFLAGS) -L/usr/local/lib -L./ $(libs) -o $@ $^
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) -c -o $@ $<

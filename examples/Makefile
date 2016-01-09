@@ -7,9 +7,8 @@ program = kmosaic
 objs = kmosaic.o main.o
 libs = -lopencv_highgui -lopencv_core -lopencv_imgproc
 
-$(program): CXXFLAGS += -L/usr/local/lib
 $(program): $(objs)
-	$(CXX) $(CXXFLAGS) $(libs) -o $@ $^
+	$(CXX) $(CXXFLAGS) -L/usr/local/lib $(libs) -o $@ $^
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
