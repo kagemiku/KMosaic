@@ -1,0 +1,10 @@
+os: osx
+language: cpp
+compiler: clang++
+before_install:
+    - brew update
+    - brew upgrade
+    - brew install cmake
+    - brew tap homebrew/science
+    - brew install opencv
+script: "sh ./.travis_build.sh"
