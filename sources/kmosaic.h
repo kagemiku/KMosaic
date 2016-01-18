@@ -22,10 +22,14 @@ private:
     } RGB;
 
 private:
-    static auto resizeImage(const cv::Mat& source, cv::Mat& destination, int width, int height) -> void;
-    static auto calcMeanColor(const cv::Mat& source, int blockWidth, int blockHeight, int row, int col) -> RGB;
-    static auto drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight, int row, int col, const RGB& color) -> void;
-    static auto dropTone(const cv::Mat& source, cv::Mat& destination, int blockRows, int blockCols) -> void;
+    static auto resizeImage(const cv::Mat& source, cv::Mat& destination,
+            int width, int height) -> void;
+    static auto calcMeanColor(const cv::Mat& source,
+            int blockWidth, int blockHeight, int row, int col) -> RGB;
+    static auto drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight,
+            int row, int col, const RGB& color) -> void;
+    static auto dropTone(const cv::Mat& source, cv::Mat& destination,
+            int blockRows, int blockCols) -> void;
 
 public:
     KMosaic() = delete;
@@ -33,7 +37,8 @@ public:
     ~KMosaic();
     auto operator=(const KMosaic& rhs) -> KMosaic* = delete;
 
-    static auto makeMosaicImage(const cv::Mat& source, int width, int height, int blockRows, int blockCols) throw (std::string) -> cv::Mat;
+    static auto makeMosaicImage(const cv::Mat& source, int width, int height,
+            int blockRows, int blockCols) throw (std::string) -> cv::Mat;
 };
 
 
