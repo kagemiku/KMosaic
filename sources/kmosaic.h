@@ -1,4 +1,6 @@
-#pragma once
+#ifndef KG_KMOSAIC_H
+#define KG_KMOSAIC_H
+
 
 #include <string>
 #include <opencv2/core/core.hpp>
@@ -43,3 +45,7 @@ public:
 
 
 }
+
+
+#endif
+

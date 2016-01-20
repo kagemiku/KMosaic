@@ -87,3 +87,4 @@ auto KMosaic::makeMosaicImage(const cv::Mat& source, int width, int height,
 
 
 }
+
