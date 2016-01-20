@@ -13,14 +13,14 @@ KMosaic::~KMosaic()
 
 
 auto KMosaic::resizeImage(const cv::Mat& source, cv::Mat& destination,
-        int width, int height) -> void
+                            int width, int height) -> void
 {
     cv::resize(source, destination, destination.size(), 0, 0, cv::INTER_LINEAR);
 }
 
 
 auto KMosaic::calcMeanColor(const cv::Mat& source, int blockWidth,
-        int blockHeight, int row, int col) -> KMosaic::RGB
+                            int blockHeight, int row, int col) -> KMosaic::RGB
 {
     auto r = 0, g = 0, b = 0;
     for ( auto i = row*blockHeight; i < (row + 1)*blockHeight; i++ ) {
@@ -42,7 +42,7 @@ auto KMosaic::calcMeanColor(const cv::Mat& source, int blockWidth,
 
 
 auto KMosaic::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeight,
-        int row, int col, const RGB& color) -> void
+                            int row, int col, const RGB& color) -> void
 {
     for ( auto i = row*blockHeight; i < (row + 1)*blockHeight; i++ ) {
         for ( auto j = col*blockWidth; j < (col + 1)*blockWidth; j++ ) {
@@ -56,7 +56,7 @@ auto KMosaic::drawMeanColor(cv::Mat& destination, int blockWidth, int blockHeigh
 
 
 auto KMosaic::dropTone(const cv::Mat& source, cv::Mat& destination,
-        int blockRows, int blockCols) -> void
+                        int blockRows, int blockCols) -> void
 {
     const auto blockWidth   = destination.size().width/blockCols;
     const auto blockHeight  = destination.size().height/blockRows;
@@ -70,7 +70,8 @@ auto KMosaic::dropTone(const cv::Mat& source, cv::Mat& destination,
 
 
 auto KMosaic::makeMosaicImage(const cv::Mat& source, int width, int height,
-        int blockRows, int blockCols) throw (std::string) -> cv::Mat
+                                int blockRows, int blockCols)
+                                throw (std::string) -> cv::Mat
 {
     if ( width % blockCols != 0 || height % blockRows != 0 ) {
         throw std::string("invalid params");
