@@ -38,7 +38,7 @@ public:
     KMosaic() = delete;
     KMosaic(const KMosaic& rhs) = delete;
     ~KMosaic();
-    auto operator=(const KMosaic& rhs) -> KMosaic* = delete;
+    auto operator=(const KMosaic& rhs) -> KMosaic& = delete;
 
     static auto makeMosaicImage(const cv::Mat& source, int width, int height,
                                 int blockRows, int blockCols)
